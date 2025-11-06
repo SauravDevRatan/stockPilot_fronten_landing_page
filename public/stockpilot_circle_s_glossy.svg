@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">StockPilot — Glossy Blue S Emblem</title>
+  <desc>3D glossy circular emblem in blue tones with a prominent 'S' monogram for StockPilot.</desc>
+
+  <defs>
+    <!-- Main blue gradient for the circle -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b6bff"/>
+      <stop offset="60%" stop-color="#0077d9"/>
+      <stop offset="100%" stop-color="#0056b3"/>
+    </linearGradient>
+
+    <!-- Highlight gradient to create glossy effect -->
+    <radialGradient id="gloss" cx="30%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Inner shadow using filter -->
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset dx="0" dy="6" result="offsetBlur"/>
+      <feComposite in="offsetBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="innerShadow"/>
+      <feColorMatrix in="innerShadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.45 0" result="shadowColor"/>
+      <feMerge>
+        <feMergeNode in="shadowColor"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 'S' bevel gradient -->
+    <linearGradient id="sGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#d7ecff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#8fbfff" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- subtle drop shadow for S -->
+    <filter id="sDrop" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#00214a" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Transparent background -->
+  <rect width="100%" height="100%" fill="none"/>
+
+  <!-- Outer circle with gradient and inner shadow for depth -->
+  <g transform="translate(256,256)">
+    <!-- Base circle -->
+    <circle r="216" fill="url(#bgGrad)"/>
+    <!-- glossy highlight -->
+    <ellipse cx="-40" cy="-80" rx="160" ry="110" fill="url(#gloss)" opacity="0.95"/>
+    <!-- Inner rim for depth -->
+    <circle r="190" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="6"/>
+    <!-- Apply inner shadow via mask group -->
+    <g filter="url(#innerShadow)">
+      <circle r="216" fill="none"/>
+    </g>
+  </g>
+
+  <!-- 3D 'S' monogram centered -->
+  <g transform="translate(256,256)">
+    <!-- Back darker face for depth -->
+    <path d="M40 -60 C70 -90, 140 -90, 170 -60 C200 -30, 200 20, 170 50 C140 80, 80 80, 60 60 C40 40, 80 20, 120 10 C160 0, 180 -10, 160 -30 C140 -50, 80 -50, 40 -60 Z"
+          fill="#0b3f7a" opacity="0.95" transform="scale(1.05) translate(-6,8)"/>
+    <!-- Main S face with bevel gradient -->
+    <path d="M40 -62 C72 -92, 142 -92, 174 -62 C206 -32, 206 18, 174 48 C142 78, 82 78, 62 58 C42 38, 84 18, 124 8 C164 -2, 186 -12, 166 -34 C146 -56, 86 -56, 40 -62 Z"
+          fill="url(#sGrad)" filter="url(#sDrop)"/>
+    <!-- Inner cut to make it a clear 'S' hole -->
+    <path d="M120 -10 C100 -2, 80 8, 68 24 C56 40, 72 58, 96 54 C120 50, 132 36, 120 18 C108 0, 140 -10, 120 -10 Z"
+          fill="#053a76" opacity="0.85"/>
+  </g>
+
+  <!-- thin outer stroke for crisp edge -->
+  <circle cx="256" cy="256" r="216" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="2"/>
+
+</svg>

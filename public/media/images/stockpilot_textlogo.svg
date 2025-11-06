@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">StockPilot — Text Logo</title>
+  <desc>Clean, modern text-only wordmark for StockPilot. Distinctive custom 'S' mark integrated with the wordmark.</desc>
+
+  <defs>
+    <!-- Gradient for wordmark -->
+    <linearGradient id="gradA" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#0b6bff"/>
+      <stop offset="100%" stop-color="#00c2a8"/>
+    </linearGradient>
+
+    <!-- Slight shadow filter -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Custom geometric 'S' as a mask to slice through text for a modern cut -->
+    <mask id="cutMask">
+      <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+      <!-- the 'cut' shape (black removes in mask) -->
+      <path d="M124 40 C84 40, 64 98, 104 120 C144 142, 214 118, 214 78 C214 38, 164 20, 124 40 Z" fill="black" transform="translate(36,40) scale(2.6)"/>
+      <path d="M128 180 C168 180, 188 122, 148 100 C108 78, 38 102, 38 142 C38 182, 88 200, 128 180 Z" fill="black" transform="translate(36,40) scale(2.6)"/>
+    </mask>
+  </defs>
+
+  <!-- Background (transparent) -->
+  <rect width="100%" height="100%" fill="none"/>
+
+  <!-- Left emblem: stylized S built from overlapping capsules (as a unique glyph) -->
+  <g transform="translate(60,60) scale(1.05)" filter="url(#softShadow)">
+    <!-- Upper capsule -->
+    <rect x="0" y="0" width="120" height="60" rx="30" ry="30" fill="url(#gradA)"/>
+    <!-- middle connector rotated -->
+    <rect x="35" y="45" width="120" height="60" rx="30" ry="30" transform="rotate(-28 95 75)" fill="#0b6bff" opacity="0.95"/>
+    <!-- lower capsule -->
+    <rect x="80" y="80" width="120" height="60" rx="30" ry="30" fill="#00c2a8" opacity="0.98"/>
+    <!-- cutout to give it an 'S' negative space -->
+    <path d="M20 20 C60 -10, 140 -10, 180 20 C220 50, 220 110, 180 140 C140 170, 60 170, 20 140 C-20 110, -20 50, 20 20 Z" fill="white" opacity="0.0" mask="url(#cutMask)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(260,240)">
+    <!-- 'Stock' part -->
+    <text x="0" y="0" font-family="Inter, Poppins, Montserrat, Arial, sans-serif" font-size="86" font-weight="700" letter-spacing="-1" fill="#0f3b3a">Stock</text>
+    <!-- 'Pilot' part with gradient and slight italic tilt -->
+    <text x="220" y="0" font-family="Inter, Poppins, Montserrat, Arial, sans-serif" font-size="86" font-weight="800" letter-spacing="-1" fill="url(#gradA)" transform="skewX(-8)">Pilot</text>
+  </g>
+
+  <!-- Thin underline accent that stretches under the wordmark -->
+  <rect x="260" y="260" width="520" height="6" rx="3" fill="#e6f8f5" />
+
+  <!-- Small tagline (optional) -->
+  <text x="260" y="305" font-family="Inter, Roboto, Arial, sans-serif" font-size="18" fill="#7a8a91">Analytics · Insights · Action</text>
+
+</svg>
