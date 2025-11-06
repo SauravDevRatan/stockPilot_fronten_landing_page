@@ -14,7 +14,7 @@ function SignUp() {
             <Button
             variant="contained"
             component="a"
-            href="http://localhost:5173/"
+            href="https://stockpilot-dashboard.onrender.com"
             rel="noopener noreferrer"
             >
             Explore Kite

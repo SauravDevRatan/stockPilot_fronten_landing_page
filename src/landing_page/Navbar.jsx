@@ -40,7 +40,7 @@ function Navbar() {
             <Button color="inherit"><Link to="/support" style={{ color: 'inherit', textDecoration: 'none' }}>Support</Link></Button>
             <Tooltip title="Explore Dashboard" arrow>
               <IconButton size="large" edge="end" color="inherit" aria-label="menu" sx={{ ml: 1 ,}}>
-               <Link to="http://localhost:5173/" style={{color:"white"}}><MenuIcon  /></Link>
+               <Link to="https://stockpilot-dashboard.onrender.com" style={{color:"white"}}><MenuIcon  /></Link>
               </IconButton>
             </Tooltip>
             <span></span>
